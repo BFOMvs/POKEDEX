@@ -17,7 +17,7 @@ Un despliegue exitoso en la nube (como Azure Static Web Apps) requiere que el de
 La seguridad web influye directamente en la disponibilidad de los recursos; una política mal configurada puede bloquear elementos legítimos como imágenes o fuentes.
 
 3. ¿Qué desafíos encontraste en el proceso?
-Configuración del CSP: El mayor reto fue equilibrar la seguridad estricta para obtener la calificación A+ con la funcionalidad de Angular, especialmente al manejar las fuentes de Google y las imágenes externas de la PokeAPI.
+Configuración del CSP: El mayor reto fue equilibrar la seguridad estricta para obtener la calificación A con la funcionalidad de Angular, especialmente al manejar las fuentes de Google y las imágenes externas de la PokeAPI.
 
 Gestión de Rutas: Asegurar que el archivo de configuración fuera incluido correctamente en el paquete de producción mediante la edición del angular.json.
 
