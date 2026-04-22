@@ -5,7 +5,6 @@ Los encabezados configurados en el archivo staticwebapp.config.json actúan como
 XSS (Cross-Site Scripting): Prevenido mediante el Content-Security-Policy (CSP) al usar un Hash SHA-256 para scripts y una lista blanca de dominios permitidos, evitando la ejecución de código malicioso inyectado.
 
 Clickjacking: Mitigado con X-Frame-Options: DENY, que impide que el sitio sea cargado dentro de un iframe en dominios externos.
-
 MIME-Sniffing: Evitado con X-Content-Type-Options: nosniff, obligando al navegador a respetar el tipo de contenido declarado por el servidor.
 
 Intercepción de Datos: El encabezado HSTS asegura que todas las comunicaciones se realicen exclusivamente a través de HTTPS, protegiendo contra ataques de degradación de protocolo.
