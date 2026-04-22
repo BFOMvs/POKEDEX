@@ -1,45 +1,25 @@
-# Pokédex Angular
-Es una aplicación angular, creada por el desarrollador Keiler Mora, que simula un pokex y esta aplicación donde puede ser vista en vivo a traves del enlace https://keilermora.github.io/pokedex-angular/.
-El proyecto fue desarrollado usando la librería de JavaScript [Angular](https://angular.io/) para crear la interfaz de usuario, en comunicación con la Api RESTful [PokéAPI](https://pokeapi.co/).
+Análisis Personal del Despliegue y Seguridad
+1. ¿Qué vulnerabilidades previenen los encabezados implementados?
+Los encabezados configurados en el archivo staticwebapp.config.json actúan como una capa de defensa proactiva:
 
+XSS (Cross-Site Scripting): Prevenido mediante el Content-Security-Policy (CSP) al usar un Hash SHA-256 para scripts y una lista blanca de dominios permitidos, evitando la ejecución de código malicioso inyectado.
 
-# Requisitos mínimos
-1. [Nodejs](https://nodejs.org/en/download/)
-2. [AngularCLI](https://angular.io/guide/setup-local)
-3. [Git](https://git-scm.com/downloads) *opcional
-4. [Visual Studio Code](https://code.visualstudio.com/download) *opcional
+Clickjacking: Mitigado con X-Frame-Options: DENY, que impide que el sitio sea cargado dentro de un iframe en dominios externos.
 
-# Instalar & Ejecutar
-1. Descargar el codigo fuente del proyecto de la carpeta **"sistemas-distribuidos\poke-dex-lab\source\pokedex-angular\pokedex-angular.zip"**
-2. Descomprime el archivo **pokedex-angular.zip**
-3. Luego de descomprimir el archivo, si estás usando sistema operativo Windows, ejecuta las siguientes teclas **"WIN + R"** y colocar el comando **"CMD"**
-4. Dentro de la consola ejecuta el comando
-		
-        cd "sistemas-distribuidos\poke-dex-lab\source\pokedex-angular\"
-5. Luego instala las dependencias del proyecto con el siguiente comando:
-		
-        npm install
-6. Ejecuta el proyecto usando el comando:
-    
-        npm start
-7. Abre cualquier navegador web y navega en la url http://localhost:4200/
-	
+MIME-Sniffing: Evitado con X-Content-Type-Options: nosniff, obligando al navegador a respetar el tipo de contenido declarado por el servidor.
 
-# Instalar & desplegar
-1. Descargar el codigo fuente del proyecto de la carpeta **"sistemas-distribuidos\poke-dex-lab\source\pokedex-angular\pokedex-angular.zip"**
-2. Descomprime el archivo **pokedex-angular.zip**
-3. Luego de descomprimir el archivo, si estás usando sistema operativo Windows, ejecuta las siguientes teclas **"WIN + R"** y colocar el comando **"CMD"**
-4. Dentro de la consola ejecuta el comando
-		
-        cd "sistemas-distribuidos\poke-dex-lab\source\pokedex-angular\"
-5. Luego instala las dependencias del proyecto con el siguiente comando:
-		
-        npm install
-6. Crea la carpeta de despliegue usando el comando:
-    
-        npm run build
-7. Al finalizar la ejecución del comando anterior, se creará dentro de la carpeta **\pokedex-angular** una subcarpeta llamada **dist\pokedex-angular**	
-8. Todo el contenido de la subcarpeta **dist\pokedex-angular** está lista para ser desplegada a cualquier server.
+Intercepción de Datos: El encabezado HSTS asegura que todas las comunicaciones se realicen exclusivamente a través de HTTPS, protegiendo contra ataques de degradación de protocolo.
 
-## Referencias
-[Keiler Mora](https://github.com/keilermora)
+2. ¿Qué aprendiste sobre la relación entre despliegue y seguridad web?
+He aprendido que la seguridad no es un proceso aislado, sino una parte integral del ciclo de vida del despliegue (DevSecOps):
+
+Un despliegue exitoso en la nube (como Azure Static Web Apps) requiere que el desarrollador defina explícitamente las políticas de confianza.
+
+La seguridad web influye directamente en la disponibilidad de los recursos; una política mal configurada puede bloquear elementos legítimos como imágenes o fuentes.
+
+3. ¿Qué desafíos encontraste en el proceso?
+Configuración del CSP: El mayor reto fue equilibrar la seguridad estricta para obtener la calificación A+ con la funcionalidad de Angular, especialmente al manejar las fuentes de Google y las imágenes externas de la PokeAPI.
+
+Gestión de Rutas: Asegurar que el archivo de configuración fuera incluido correctamente en el paquete de producción mediante la edición del angular.json.
+
+Depuración en Tiempo Real: Aprender a interpretar los errores de violación de política en la consola del navegador para ajustar los permisos quirúrgicamente.
