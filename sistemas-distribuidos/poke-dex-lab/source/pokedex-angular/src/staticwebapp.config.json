@@ -1,6 +1,6 @@
 {
   "globalHeaders": {
-    "Content-Security-Policy": "default-src 'self' https://pokeapi.co https://beta.pokeapi.co; img-src 'self' data: https://raw.githubusercontent.com https://assets.pokemon.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'none';",
+    "Content-Security-Policy": "default-src 'self' https://pokeapi.co https://beta.pokeapi.co; img-src 'self' data: https://raw.githubusercontent.com https://assets.pokemon.com https://*.githubusercontent.com https://*.png; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'none';",
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
