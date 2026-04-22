@@ -1,10 +1,10 @@
 {
   "globalHeaders": {
-    "Content-Security-Policy": "default-src 'self' https://pokeapi.co https://beta.pokeapi.co; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'none'; upgrade-insecure-requests;",
+    "Content-Security-Policy": "default-src 'self' https://pokeapi.co https://beta.pokeapi.co; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors 'none';",
     "X-Frame-Options": "DENY",
     "X-Content-Type-Options": "nosniff",
-    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
     "Referrer-Policy": "no-referrer",
-    "Permissions-Policy": "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), layout-animations=(), legacy-image-formats=(), magnetometer=(), microphone=(), midi=(), overshoot-behavior=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), speaker-selection=(), sync-xhr=(), unoptimized-images=(), unsized-media=(), usb=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=()"
+    "Permissions-Policy": "accelerometer=(), camera=(), microphone=(), geolocation=(), gyroscope=(), magnetometer=(), payment=(), usb=()"
   }
 }
